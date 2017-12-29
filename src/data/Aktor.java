@@ -1,3 +1,5 @@
+package data;
+
 public class Aktor {
 
     private String imie;
@@ -8,6 +10,10 @@ public class Aktor {
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.kraj_pochodzenia = kraj_pochodzenia;
+    }
+
+    public Aktor(Aktor aktor){
+        this(aktor.imie, aktor.nazwisko, aktor.kraj_pochodzenia);
     }
 
     public String getImie() {
@@ -34,8 +40,8 @@ public class Aktor {
         this.kraj_pochodzenia = kraj_pochodzenia;
     }
 
-    void printInfo() {
-        String info = "\nimię: " + getImie() + "; " + "\nnazwisko: " + getNazwisko() + "; " + "\nkraj pochodzenia: " + getKraj_pochodzenia();
+    public void printInfo() {
+        String info = getImie() + "; " + "\nnazwisko: " + getNazwisko() + "; " + "\nkraj pochodzenia: " + getKraj_pochodzenia();
         System.out.println(info);
     }
 }

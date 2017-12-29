@@ -1,13 +1,15 @@
+package data;
+
 public class Film {
 
     private String nazwa;
     private String gatunek;
     private String opis;
-    private String ocena;
+    private double ocena;
     private String rezyser;
     private int rok_produkcji;
 
-    public Film(String nazwa, String gatunek, String opis, String ocena, String rezyser, int rok_produkcji) {
+    public Film(String nazwa, String gatunek, String opis, double ocena, String rezyser, int rok_produkcji) {
         this.nazwa = nazwa;
         this.gatunek = gatunek;
         this.opis = opis;
@@ -15,6 +17,11 @@ public class Film {
         this.rezyser = rezyser;
         this.rok_produkcji = rok_produkcji;
     }
+
+    public Film(Film film){
+        this(film.nazwa, film.gatunek, film.opis, film.ocena, film.rezyser, film.rok_produkcji);
+    }
+
 
     public String getNazwa() {
         return nazwa;
@@ -40,11 +47,11 @@ public class Film {
         this.opis = opis;
     }
 
-    public String getOcena() {
+    public double getOcena() {
         return ocena;
     }
 
-    public void setOcena(String ocena) {
+    public void setOcena(double ocena) {
         this.ocena = ocena;
     }
 
@@ -64,10 +71,9 @@ public class Film {
         this.rok_produkcji = rok_produkcji;
     }
 
-    void printInfo() {
-        String info = "\ntytuł: " + getNazwa() + "; " + "\ngatunek: " + getGatunek() + "; " + "\nopis: " + getOpis() + "; " + "\nocena: " + getOcena() + "; "
+
+    public String printInfo() {
+        return  "\ntytuł: " + getNazwa() + "; " + "\ngatunek: " + getGatunek() + "; " + "\nopis: " + getOpis() + "; " + "\nocena: " + getOcena() + "/10.0" + "; "
                        + "\nreżyser: " + getRezyser() + "; " + "\nrok produkcji: " + getRok_produkcji();
-        System.out.println(info);
-        System.out.println();
     }
 }

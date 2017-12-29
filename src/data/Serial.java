@@ -1,15 +1,17 @@
+package data;
+
 public class Serial {
 
     private String nazwa;
     private String gatunek;
     private String opis;
-    private String ocena;
+    private double ocena;
     private String producent;
     private int ilosc_sezonow;
     private int ilosc_odcinkow;;
 
 
-    public Serial(String nazwa, String gatunek, String opis, String ocena, String producent, int ilosc_sezonow, int ilosc_odcinkow) {
+    public Serial(String nazwa, String gatunek, String opis, double ocena, String producent, int ilosc_sezonow, int ilosc_odcinkow) {
         this.nazwa = nazwa;
         this.gatunek = gatunek;
         this.opis = opis;
@@ -18,6 +20,11 @@ public class Serial {
         this.ilosc_sezonow = ilosc_sezonow;
         this.ilosc_odcinkow = ilosc_odcinkow;
     }
+
+    public Serial(Serial serial){
+        this(serial.nazwa, serial.gatunek, serial.opis, serial.ocena, serial.producent, serial.ilosc_sezonow, serial.ilosc_odcinkow);
+    }
+
 
     public String getNazwa() {
         return nazwa;
@@ -43,11 +50,11 @@ public class Serial {
         this.opis = opis;
     }
 
-    public String getOcena() {
+    public double getOcena() {
         return ocena;
     }
 
-    public void setOcena(String ocena) {
+    public void setOcena(double ocena) {
         this.ocena = ocena;
     }
 
@@ -75,9 +82,11 @@ public class Serial {
         this.ilosc_odcinkow = ilosc_odcinkow;
     }
 
-    void printInfo() {
-        String info = "\ntytuł: " + getNazwa() + "; " + "\ngatunek: " + getGatunek() + "; " + "\nopis: " + getOpis() + "; " +
-                "\nocena: " + getOcena() + "; " + "\nproducent: " + getProducent() + "; " + "\nilość sezonów: " + getIlosc_sezonow() + "; " + "\nilość odcinków: " + getIlosc_odcinkow();
+
+    public void printInfo() {
+
+        String info = "\ntytuł: " + nazwa + "; " + "\ngatunek: " + gatunek + "; " + "\nopis: " + opis + "; " +
+                "\nocena: " + ocena + "/10.0" + "; " + "\nproducent: " + producent + "; " + "\nilość sezonów: " + ilosc_sezonow + "; " + "\nilość odcinków: " + ilosc_odcinkow;
         System.out.println(info);
         System.out.println();
     }
