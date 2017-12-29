@@ -83,11 +83,9 @@ public class Serial {
     }
 
 
-    public void printInfo() {
 
-        String info = "\ntytuł: " + nazwa + "; " + "\ngatunek: " + gatunek + "; " + "\nopis: " + opis + "; " +
-                "\nocena: " + ocena + "/10.0" + "; " + "\nproducent: " + producent + "; " + "\nilość sezonów: " + ilosc_sezonow + "; " + "\nilość odcinków: " + ilosc_odcinkow;
-        System.out.println(info);
-        System.out.println();
+    public String printInfo() {
+        return "\ntytuł: " + getNazwa() + "; " + "\ngatunek: " + getGatunek() + "; " + "\nopis: " + getOpis() + "; " +
+                "\nocena: " + getOcena() + "/10.0" + "; " + "\nproducent: " + getProducent() + "; " + "\nilość sezonów: " + getIlosc_sezonow() + "; " + "\nilość odcinków: " + getIlosc_odcinkow();
     }
 }

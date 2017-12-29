@@ -40,8 +40,8 @@ public class Aktor {
         this.kraj_pochodzenia = kraj_pochodzenia;
     }
 
-    public void printInfo() {
-        String info = getImie() + "; " + "\nnazwisko: " + getNazwisko() + "; " + "\nkraj pochodzenia: " + getKraj_pochodzenia();
-        System.out.println(info);
+
+    public String printInfo() {
+        return "\nimie: " +getImie() + "; " + "\nnazwisko: " + getNazwisko() + "; " + "\nkraj pochodzenia: " + getKraj_pochodzenia();
     }
 }

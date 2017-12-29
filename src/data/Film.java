@@ -71,9 +71,8 @@ public class Film {
         this.rok_produkcji = rok_produkcji;
     }
 
-
     public String printInfo() {
-        return  "\ntytuł: " + getNazwa() + "; " + "\ngatunek: " + getGatunek() + "; " + "\nopis: " + getOpis() + "; " + "\nocena: " + getOcena() + "/10.0" + "; "
+        return "\nnazwa: " + getNazwa() + "; " + "\ngatunek: " + getGatunek() + "; " + "\nopis: " + getOpis() + "; " + "\nocena: " + getOcena() + "/10.0" + "; "
                        + "\nreżyser: " + getRezyser() + "; " + "\nrok produkcji: " + getRok_produkcji();
     }
 }
